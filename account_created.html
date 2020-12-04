@@ -21,20 +21,6 @@
       padding: 0;
     }
 
-    body {
-      width: 100% !important;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      margin: 0;
-    }
-
-    a {
-      text-decoration: none !important;
-    }
-
-    /* End reset */
-
-
     /* These are our tablet/medium screen media queries */
   </style>
   <style>
@@ -113,9 +99,9 @@
   </style>
 </head>
 
-<body style="padding:0; margin:0 auto !important;">
-  <div style="border: 2px solid #D2D3D6; margin: 17rem;">
-    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; padding: 0" width="100%">
+<body style="padding: 0; margin: 0 auto !important;">
+  <div style="border: 2px solid #D2D3D6; margin: 17rem auto; width: 60%;">
+    <table cellspacing="0" style="margin: 0 auto; padding: 0" width="100%">
       <tr th:fragment="header" bgcolor="{{EmailBranding.bannerColor}}">
         <td align="center" valign="top">
           <table width="640" valign="top" class="w100p" bgcolor="{{EmailBranding.bannerColor}}"
@@ -143,17 +129,17 @@
       </tr>
     </table>
     <div style="padding: 3rem;">
-      <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+      <font face="{{EmailBranding.fontFamily}}">
         <span style="font-size: 32px;color:#000000;font-weight:600;">Account
           Created</span><br /><br />
         <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;">
-          Hello {{Transfer.tenant.name}},
+          Hello {{CustomerName}},
         </p>
         <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;">
-          Congrats! Your {{AccountName}} account was successfully created.
+          Congrats! Your {{Tenant.name}} account was successfully created.
         </p>
         <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;margin-bottom: 3rem">
-          By creating a {{AccountName}} account, you have also agreed to the Dwolla
+          By creating a {{Tenant.name}} account, you have also agreed to the Dwolla
           Terms of Service and Privacy Policy, and opened a Dwolla account.
         </p>
       </font>
@@ -189,16 +175,16 @@
         <td align="center" bgcolor="{{EmailBranding.footerColor}}" width="640" valign="top" class="w100p"
           style="text-align: center;">
           <div style="width:70%;margin:1rem auto;background-color:#eee;padding:10px;">
-            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+            <font face="{{EmailBranding.fontFamily}}">
               <span style="font-size:18px;line-height:20px;font-weight: 400;color:#333333;">
                 If you have any questions or concerns contact support at </br>
-                {{Transfer.tenant.identifier}}.com or {{Transfer.tenant.pocPhone}}.
+                {{Tenant.pocEmail}}.com or {{Tenant.pocPhone}}.
               </span>
             </font>
           </div>
           {{#if EmailBranding.disclamer}}
           <div style="margin-bottom: 1rem;">
-            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+            <font face="{{EmailBranding.fontFamily}}">
               <span style="font-size:12px;line-height:16px;font-weight: 400;color:#FFFFFF;font-style: normal;">
                 <em>
                   {{EmailBranding.disclamer}}
@@ -209,24 +195,24 @@
           {{/if}}
           <hr />
           <div style="margin-bottom: 2.5rem; margin-top: 1.5rem; padding: 1.2rem;">
-            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+            <font face="{{EmailBranding.fontFamily}}">
               <span style="
                                             font-size:14px;
                                             line-height:20px;
                                             font-weight: 400;
                                             color:#FFFFFF;
                                             font-style: normal;">
-                You're receiving this email because you have a {{{Transfer.tenant.name}}} paymints.io account.
+                You're receiving this email because you have a {{{Tenant.name}}} paymints.io account.
                 Please note, you may not be able to opt out of these emails, as they're non-promotional
                 in nature and contain important information regarding your account. Please do not reply
                 to this email. Instead, refer to the contact information above.
               </span>
             </font>
           </div>
-          <div>
-            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+          <div style="margin-bottom: 1rem;">
+            <font face="{{EmailBranding.fontFamily}}">
               <span style="font-size:14px;line-height:20px;font-weight: 400;color:#FFFFFF;font-style: italic;">
-                {{Transfer.tenant.name}} Partners with Dwolla to provide a secure payments solution.
+                {{Tenant.name}} Partners with Dwolla to provide a secure payments solution.
                 </br>
                 Dwolla, Inc. 909 Locust Street, Sutee 201, Des Moines, IA 50309
               </span>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
   <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
-  <title>Withdrawal Failure</title>
+  <title>Micro-deposits Failed</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
@@ -130,24 +130,21 @@
     </table>
     <div style="padding: 3rem;">
       <font face="{{EmailBranding.fontFamily}}">
-        <span style="font-size: 32px;color:#000000;font-weight:600;">Withdrawal Failure</span><br /><br />
+        <span style="font-size: 32px;color:#000000;font-weight:600;">Micro-deposits Failed</span><br /><br />
         <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;">
           Hello {{CustomerName}},
         </p>
-        <p>
-          An ACH transfer out of your {{Tenant.name}} balance was unsuccessful. Here are
-          the details
-          of
-          this payment:
+        <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;margin-bottom: 3rem">
+          The transfer of two micro-deposits sent to your bank account failed. Here
+          are the
+          details:
           <br />
           <br />
-          Source: {{Transfer.sourceBankAccount}}
+          Bank Name: {{Transfer.escrowBankAccount.bankName}}
           <br />
-          Destination: {{Transfer.escrowBankAccount}}
+          Account: {{Transfer.escrowBankAccount.accountLastFourDigits}}
           <br />
-          Amount: {{Transfer.amount}}
-          <br />
-          Date Failed: {{Date}}
+          Date: {{Date}}
         </p>
       </font>
     </div>
