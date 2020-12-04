@@ -1,0 +1,274 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+  <title>Account Created</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Asap:40,500,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    /*Calling our web font*/
+
+    /* Some resets and issue fixes */
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    /* End reset */
+
+
+    /* These are our tablet/medium screen media queries */
+  </style>
+  <style>
+    @media only screen and (min-width: 631px) {}
+
+    @media only screen and (max-width: 630px) {
+
+      /* Display block allows us to stack elements */
+      *[class="mobile-column"],
+      .mobile-column {
+        display: block;
+      }
+
+      /* Some more stacking elements */
+      *[class="mob-column"],
+      .mob-column {
+        float: none !important;
+        width: 100% !important;
+      }
+
+      /* Hide stuff */
+      *[class="hide"],
+      .hide {
+        display: none !important;
+      }
+
+      /* This sets elements visible on view-ports smaller than 630px */
+      *[class="w100p__show"],
+      .w100p__show {
+        display: block !important;
+      }
+
+      /* This sets elements to 100% width and fixes the height issues too, a god send */
+      *[class="w100p"],
+      .w100p {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* For the 2x2 stack */
+      *[class="condensed"],
+      .condensed {
+        padding-bottom: 40px !important;
+        display: block;
+      }
+
+      /* Centers content on mobile */
+      *[class="center"],
+      .center {
+        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* 100percent width section with 20px padding */
+      *[class="w100pad"],
+      .w100pad {
+        width: 100% !important;
+        padding: 20px;
+      }
+
+      /* 100percent width section with 20px padding left & right */
+      *[class="w100padleftright"],
+      .w100padleftright {
+        width: 100% !important;
+        /* padding: 0 20px 0 20px; */
+      }
+
+      /* 100percent width section with 20px padding top & bottom */
+      *[class="w100padtopbottom"],
+      .w100padtopbottom {
+        width: 100% !important;
+        padding: 20px 0px 20px 0px;
+      }
+    }
+  </style>
+</head>
+
+<body style="padding:0; margin:0 auto !important;">
+  <div style="border: 2px solid #D2D3D6; margin: 17rem;">
+    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; padding: 0" width="100%">
+      <tr th:fragment="header" bgcolor="{{EmailBranding.bannerColor}}">
+        <td align="center" valign="top">
+          <table width="640" valign="top" class="w100p" bgcolor="{{EmailBranding.bannerColor}}"
+            style="margin: 0 auto; width: 100%;max-width: 640px;">
+            <tr width="100%">
+              <td width="100%" height="25"></td>
+            </tr>
+            <tr>
+              <td align="center">
+                <table>
+                  {{#if EmailBranding.bannerLogoURL}}
+                  <div>
+                    <img src="{{EmailBranding.bannerLogoURL}}" alt="logo" width="90" height="auto"
+                      style="margin: .5rem auto;">
+                  </div>
+                  {{/if}}
+                </table>
+              </td>
+            </tr>
+            <tr width="100%">
+              <td width="100%" height="25"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div style="padding: 3rem;">
+      <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+        <span style="font-size: 32px;color:#000000;font-weight:600;">Account
+          Created</span><br /><br />
+        <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;">
+          Hello {{Transfer.tenant.name}},
+        </p>
+        <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;">
+          Congrats! Your {{AccountName}} account was successfully created.
+        </p>
+        <p style="font-size: 14px;color:#000000;font-weight:400;line-height: 2rem;margin-bottom: 3rem">
+          By creating a {{AccountName}} account, you have also agreed to the Dwolla
+          Terms of Service and Privacy Policy, and opened a Dwolla account.
+        </p>
+      </font>
+    </div>
+    <div width="100%" style="align-items: center;">
+      <table border="0" cellspacing="0" cellpadding="10" bgcolor="{{EmailBranding.ctaButtonColor}}"
+        style=border-radius:4px;margin:auto;margin-bottom:5rem;>
+        <tr>
+          <!-- Button : BEGIN -->
+          <td align="center" class="button-td button-td-primary" style="color:#FFFFFF; font-size:16px;">
+            <font face="'Poppins', sans-serif">
+              <a href="{{accountLink}}" class="button-a button-a-primary"
+                style="color:#FFFFFF; text-decoration:none; font-size:18px;font-weight: bold;cursor: pointer;padding: 0 2.5rem">GO
+                TO MY ACCOUNT</a>
+            </font>
+          </td>
+          <!-- Button : END -->
+        </tr>
+      </table>
+    </div>
+    <table width="640" cellspacing="0" cellpadding="0" bgcolor="{{EmailBranding.footerColor}}" class="w100p"
+      style="margin: 0 auto;width: 100%;">
+      <tr>
+        <td align="center">
+          {{#if EmailBranding.footerLogoURL}}
+          <div align="center">
+            <img src="{{EmailBranding.footerLogoURL}}" alt="logo" width="90" height="auto" style="margin: 1.5rem auto;">
+          </div>
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="{{EmailBranding.footerColor}}" width="640" valign="top" class="w100p"
+          style="text-align: center;">
+          <div style="width:70%;margin:1rem auto;background-color:#eee;padding:10px;">
+            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+              <span style="font-size:18px;line-height:20px;font-weight: 400;color:#333333;">
+                If you have any questions or concerns contact support at </br>
+                {{Transfer.tenant.identifier}}.com or {{Transfer.tenant.pocPhone}}.
+              </span>
+            </font>
+          </div>
+          {{#if EmailBranding.disclamer}}
+          <div style="margin-bottom: 1rem;">
+            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+              <span style="font-size:12px;line-height:16px;font-weight: 400;color:#FFFFFF;font-style: normal;">
+                <em>
+                  {{EmailBranding.disclamer}}
+                </em>
+              </span>
+            </font>
+          </div>
+          {{/if}}
+          <hr />
+          <div style="margin-bottom: 2.5rem; margin-top: 1.5rem; padding: 1.2rem;">
+            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+              <span style="
+                                            font-size:14px;
+                                            line-height:20px;
+                                            font-weight: 400;
+                                            color:#FFFFFF;
+                                            font-style: normal;">
+                You're receiving this email because you have a {{{Transfer.tenant.name}}} paymints.io account.
+                Please note, you may not be able to opt out of these emails, as they're non-promotional
+                in nature and contain important information regarding your account. Please do not reply
+                to this email. Instead, refer to the contact information above.
+              </span>
+            </font>
+          </div>
+          <div>
+            <font face="{{EmailBranding.tenant.branding.fontFamily}}">
+              <span style="font-size:14px;line-height:20px;font-weight: 400;color:#FFFFFF;font-style: italic;">
+                {{Transfer.tenant.name}} Partners with Dwolla to provide a secure payments solution.
+                </br>
+                Dwolla, Inc. 909 Locust Street, Sutee 201, Des Moines, IA 50309
+              </span>
+            </font>
+          </div>
+          <!-- <tr>
+                                    <td align="center" class="w100p" style="color: #000000">
+                                        <font face="'Montserrat', sans-serif">
+                                            <div
+                                                style="font-size: 17px;color:#000000 !important;font-weight:300;line-height: 20px;">
+                                                © <span style="font-size: 17px;color:#000000 !important;font-weight:300;line-height: 20px;">
+                                                  {{Transfer.tenant.name}}.
+                                                </span>
+                                                <span style="font-size: 17px;color:#000000 !important;font-weight:300;line-height: 20px;"></span>
+                                            </div>
+                                            <br />
+                                            <div
+                                                style="font-size: 17px;color:#000000 !important;font-weight:300;line-height: 20px;">
+                                                <span style="font-size: 17px;color:#000000 !important;font-weight:300;line-height: 20px;">
+                                                  {{Transfer.tenant.address1}}, {{Transfer.tenant.address2}}, {{Transfer.tenant.city}} {{Transfer.tenant.state}} {{Transfer.tenant.zipcode}} {{Transfer.tenant.name}}
+                                                </span>
+                                            </div>
+                                            <br />
+                                            <div
+                                                style="font-size: 17px;color:#2bb26d !important;font-weight:300;line-height: 20px;">
+                                                <a style="font-size: 17px;color:#2bb26d !important;font-weight:300;text-decoration: underline !important;line-height: 20px;">
+                                                    <span style="font-size: 17px;color:#2bb26d !important;font-weight:300;text-decoration: underline !important;line-height: 20px;">
+                                                      {{Transfer.tenant.pocPhone}}
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </font>
+                                    </td>
+                                </tr> -->
+      <tr>
+      </tr>
+      </td>
+      </tr>
+      </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
